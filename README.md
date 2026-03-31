@@ -1,16 +1,80 @@
-# React + Vite
+<h1>Fitness Progress Predictor</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>Project Overview</h3>
+<p>
+Fitness Progress Predictor is a full-stack machine learning application designed to estimate the number of calories burned based on user-specific physiological and workout-related inputs. 
+The system takes inputs such as age, gender, weight, workout duration, heart rate, and body temperature, processes them through trained regression models, and provides accurate calorie predictions along with fitness insights.
+</p>
 
-Currently, two official plugins are available:
+<h4>Dataset: <a href="https://www.kaggle.com/datasets/nadeemajeedch/fitness-tracker-dataset">Kaggle Fitness Dataset</a></h4>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<h3>Tech Stack</h3>
+<ul>
+  <li>Front-end: ReactJS, CSS</li>
+  <li>Back-end: Python, Flask</li>
+  <li>Machine Learning: Regression Models (Linear Regression, Decision Tree, Random Forest), Feature Engineering, StandardScaler</li>
+</ul>
 
-## React Compiler
+<h3>Home Page</h3>
+<img src="https://github.com/IshitaSinha2002/FitPredict/blob/main/Screenshot%20(73).png" style="width: 500px; height: 400px; object-fit: cover;">
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<h3>Input Form</h3>
+<p>
+Designed an interactive and user-friendly input interface where users can provide their fitness and workout details through a clean and structured UI. 
+The form captures key attributes required for prediction and ensures a smooth user experience.
+</p>
 
-## Expanding the ESLint configuration
+<h3>Results Page</h3>
+<p>
+Developed a results page that displays predicted calorie expenditure. The UI highlights results clearly and provides immediate feedback to the user.
+</p>
+<img src="https://github.com/IshitaSinha2002/FitPredict/blob/main/Screenshot%20(74).png" style="width: 500px; height: 400px; object-fit: cover;">
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<h3>Model Training Implementation Details</h3>
+<ol>
+  <li><b>Data Processing:</b>
+    <ul>
+      <li>Merged datasets using User_ID.</li>
+      <li>Removed unnecessary columns.</li>
+      <li>Encoded categorical variables.</li>
+    </ul>
+  </li>
+
+  <li><b>Feature Engineering:</b>
+    <ul>
+      <li>Computed BMI.</li>
+      <li>Calculated workout intensity.</li>
+      <li>Derived effort score.</li>
+    </ul>
+  </li>
+
+  <li><b>Model Development:</b>
+    <ul>
+      <li>Linear Regression</li>
+      <li>Decision Tree Regressor</li>
+      <li>Random Forest Regressor</li>
+    </ul>
+  </li>
+
+  <li><b>Model Evaluation:</b>
+    <ul>
+      <li>R² Score and MAE used for evaluation</li>
+    </ul>
+  </li>
+
+  <li><b>Model Comparison:</b>
+    <table>
+      <tr><th>Model</th><th>R²</th><th>MAE</th></tr>
+      <tr><td>Linear Regression</td><td>0.9886</td><td>5.02</td></tr>
+      <tr><td>Decision Tree</td><td>0.9945</td><td>3.06</td></tr>
+      <tr><td>Random Forest</td><td>0.9983</td><td>1.65</td></tr>
+    </table>
+  </li>
+</ol>
+
+<h3>Backend Implementation</h3>
+<ol>
+  <li>Built REST APIs using Flask</li>
+  <li>Integrated trained model</li>
+  <li>Handled preprocessing and prediction pipeline</li>
+</ol>
